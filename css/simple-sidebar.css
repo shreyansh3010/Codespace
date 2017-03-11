@@ -56,6 +56,34 @@ html, body, #wrapper {
     background-color: #009AFF;
     height:100%;
     border-radius: 25px;
+    margin-bottom: 3vh;
+}
+#page-content-wrapper-white {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    background-color: #FFF;
+    height:100%;
+    border-radius: 25px;
+    margin-bottom: 3vh;
+}
+.background_blue{
+	position: relative;
+    padding-top: 13%;
+	padding-left:8%;
+	padding-right:8%;
+	padding-bottom:13%;
+	background-color: #009AFF;
+    height:100%;
+    border-radius: 25px;
+}
+.solution {
+	position: relative;
+    padding-top: 13%;
+	padding-left:8%;
+	padding-right:8%;
+	padding-bottom:13%;
+	height:100%
 }
 
 #wrapper.toggled #page-content-wrapper {
