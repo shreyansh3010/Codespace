@@ -1,10 +1,13 @@
-
+.body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Lato;
+}
 
 .cwrapper {
   height: 90vh;
   width: 80vw;
   padding: 30px;
-  margin-left: 7%;
 }
 
 .slide {
@@ -12,19 +15,15 @@
   margin: 40px auto;
   height: 80vh;
   width: 60vw;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
   box-shadow: 0px 5px 32px 3px rgba(184, 184, 184, 0.57);
 }
-.text {
+.slide .text {
   position: relative;
   left: 25vw;
 }
 .slide p {
   height: 400px;
   width: 400px;
-  color: #000000;
   text-align: left;
 }
 .slide h3 {
@@ -32,19 +31,12 @@
   color: #0093fc;
 }
 .slide img.slideImage {
-  height: auto;
-  max-width: 40vh;
+  height: 40vh;
+  width: 40vh;
   position: relative;
   top: 20vh;
   left: -2vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.slide div.slideImage {
-  height: auto;
-  max-width: 40vh;
-  position: relative;
-  top: 20vh;
-  left: -2vw;
 }
 .slide div.page_no {
   position: relative;
@@ -56,7 +48,7 @@
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 50px;
-  top: 23vh;
+  top: 20vh;
   background-color: #ffffff;
   right: -57.5vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -65,16 +57,14 @@
 .owl-theme .owl-dots {
   position: relative;
   top: -80vh;
-  right: -68vw;
-  width: 0px;
+  right: -66vw;
   transition: 2s all smooth;
   transform-origin: 100% 100% 0;
 }
 
 .owl-dots span {
-  width: 60px !important;
+  width: 70px !important;
   height: 5px !important;
-  margin: 18px 7px !important;
   
 }
 
@@ -90,7 +80,6 @@
 }
 
 
-/*Past year images*/
 .past{
   margin: 0px;
   padding: 0px;
@@ -98,20 +87,18 @@
 
 
 .image{
-  width: 100%;
-  height: auto;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-image: url(http://placehold.it/450x500/009AFF/ffffff);
+  max-width: 350px;
+  height: 400px;
+  background: url(http://placehold.it/350x400/009AFF/ffffff);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.text1{
-    width: 100%;
-	  height:inherit;
+.text{
+    max-width: 350px;
+	  height:400px;
 	  background:#FFF;
     color: #000000;
-    font-size: 100%;
-    padding: 80% 10% 10% 10%;
+    font-size: 12px;
+    padding: 280px 25px 25px 25px;
     font-weight: bold;
 	  opacity:0;
     transition: transform 500ms ease-in-out;
@@ -125,13 +112,11 @@ span{
 }
 .text_head{
   color: #CED1D2;
-  height: 89px;
-  font-size: 600%;
+  height: 74px;
+  font-size: 70px;
   font-family: Gill Sans MT;
 }
 .img_hover{
-  padding-left: 7%;
-  padding-right: 7%;
   animation-name: out;
   animation-duration:1s;
   -webkit-animation-name: out;
@@ -139,13 +124,14 @@ span{
   -moz-animation-name: out;
   -moz-animation-duration: 1s;
 }
-.img_hover:hover .text1{
+.img_hover:hover .text{
   opacity: 0.8;
 	filter: alpha(opacity=30);
   transform: translate(-20px,20px);
   -webkit-transform: translate(-20px,20px);
   -moz-transform: translate(-20px,20px);
 }
+
 .img_hover:hover .text_head{
   color: #0093fc;
 }
@@ -166,7 +152,6 @@ span{
   -webkit-filter: grayscale(0%);
 }
 
-/*Home screen button*/
 .circle {
 	width: 50px;
 	height: 50px;
@@ -208,7 +193,6 @@ img {
     height: auto;
 }
 
-/*Contact form*/
 .message{
   position: absolute;  
 }
@@ -219,14 +203,12 @@ img {
   border-radius: 20px;
   -moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-  color: #ffffff;
 }
 
 .blur {
    color: transparent;
    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-
 .form-control{
   background-color: transparent;
   color: #ffffff;
@@ -235,7 +217,7 @@ img {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 0px;
-  border-bottom-right-radius: 7px;
+  border-bottom-right-radius: 10px;
   border: solid 2px #a5dff7;
 }
 
@@ -248,7 +230,6 @@ img {
   padding: 5%;
   border-radius: 35px;
   width: 100%;
-  
 }
 .btn-send:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -293,6 +274,4 @@ v:focus:-ms-input-placeholder {
     color: #ffffff;
 }
 
-.error{
-	display: none;
-}		
+
