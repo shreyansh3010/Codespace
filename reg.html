@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Codespace</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel='stylesheet prefetch' href='https://dl.dropboxusercontent.com/s/f8koknynsnp9d2k/owl.theme.default.min.css?dl=1'>
+    <link rel='stylesheet prefetch' href='https://dl.dropboxusercontent.com/s/npj0ketud6mhy0l/owl.carousel.min.css?dl=0'>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/javascript.fullPage.css" />
+    <link rel="stylesheet" href="animate.css">
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_IObY48zCuzX_-syqyszGdqFZG6O0oX4&amp;sensor=false"></script>
+    <script src="js/map.js"></script>
+    
+    
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" style="height: 85%;">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        home
+                    </a>
+                </li>
+                <li class="sidebar-brand">
+                    <a href="#">
+                        tracks
+                    </a>
+                </li>
+                <li class="sidebar-brand">
+                    <a href="#">
+                        past years
+                    </a>
+                </li>
+                <li class="sidebar-brand">
+                    <a href="faq.html">
+                        faq
+                    </a>
+                </li>
+                <li>
+                <div class="row bottom-align-text-nav" style="width: 100%; margin-bottom: 40%">
+                        <div class="col-md-4 col-sm-4 icon">
+                            <a href="https://www.facebook.com/csivit/?fref=ts" target="_blank"><img class="social" src="social_icon/facebook.png"/></a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 icon" >
+                            <a href="https://twitter.com/csivitu" target="_blank"><img class="social" src="social_icon/twitter.png"/></a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 icon" > 
+                            <a href="https://github.com/csivit" target="_blank"><img class="social" src="social_icon/github.png"/></a>
+                        </div>
+                </div>
+                </li>
+                <li class="sidebar-brand bottom-align-text-nav">
+                    <a href="#">
+                        contact us
+                    </a>
+                    
+                </li>
+                
+            </ul>
+            
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+
+        <div id="fullpage">
+        <!-- Home page -->
+        <div class="section" id="page-content-wrapper-reg">
+            <div class="container-fluid">
+                <p style="opacity: 0.6; font-size: 25px; text-align: center">Make Payment</p>
+                <div class="row form_reg">
+                            <div class="col-sm-12 col-xs-12 col-sm-12">
+                                <form name="address" id="form" action="#" method="post" class="form-horizontal">
+									<div class="form-group" style="margin-bottom: 2.5%">
+										<div id="name_div" class="col-md-12 col-xs-12 col-sm-12">
+											<input type="text"  name="name" id="name" class="form-control" placeholder="NAME" required="required">
+										</div>
+									</div>
+									<div class="form-group" style="margin-bottom: 2.5%">
+										<div id="email_div" class="col-md-12 col-xs-12 col-sm-12">
+											<input type="email" id="email" name="email" class="form-control" placeholder="E-MAIL" required="required">
+										</div>
+									</div>
+                                    <div class="row" style="margin-bottom: 2%"><center>
+                                        <div class="col-lg-6 col-xs-12 col-md-6" style="color: #ffffff; text-align: center">
+                                            <h4>Are You a VIT student : </h4>
+                                        </div>
+                                        <div class="col-lg-6 col-xs-12 col-md-6">
+                                            <div class="input-group" style="width: 30px;">
+                                            <span class="input-group-addon" style="background-color: #0093fc; border: 2px solid #7ccaf6; border-radius: 2px">
+                                                <input id="theCheckbox" type="checkbox" aria-label="...">
+                                            </span>
+                                            </div><!-- /input-group -->
+                                        </div></center><!-- /.col-lg-6 -->
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 2.5%">
+										<div id="reg_no_div" class="col-md-12 col-xs-12 col-sm-12">
+											<input type="text" id="reg_no" pattern="^[1-9]{1}[0-9]{1}[A-Za-z]{3}[0-9]{4}$" class="form-control" style="background-color: #0093fc" placeholder="REGISTRATION No." required="required" disabled>
+										</div>
+									</div>
+                                    <div class="form-group" style="margin-bottom: 2.5%">
+										<div id="uni_name_div" class="col-md-12 col-xs-12 col-sm-12">
+											<input type="email" id="uni_name"class="form-control" style="background-color: #0093fc" placeholder="UNIVERSITY / INSTITUTION NAME" required="required" disabled>
+										</div>
+									</div>
+									<div class="form-group" style="margin-top: 2vh;">
+                                        <div class="col-md-4 col-xs-12 col-sm-12"><center>
+                                            <button type="submit" class="btn btn-send"><center>Proceed To Pay</center></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        
+        <!--/ Home page -->
+                 
+
+        
+        
+        </div>
+        
+        </div>  
+
+
+        
+       
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    
+    <script src='https://dl.dropboxusercontent.com/s/bnuvg4ad3vl7nop/owl.carousel.min.js?dl=1'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/javascript.fullPage.js"></script>
+    <script type="text/javascript">
+	fullpage.initialize('#fullpage', {
+		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+		menu: '#menu',
+		css3:true
+	});
+    </script>
+
+</body>
+
+</html>
