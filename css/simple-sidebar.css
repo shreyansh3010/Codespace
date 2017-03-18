@@ -7,8 +7,6 @@
  body {
     overflow-x: hidden;
     background-color: #fff;
-    font-family: 'Fira Sans', sans-serif;
-
  }
 
 html, body, #wrapper {
@@ -60,42 +58,11 @@ html, body, #wrapper {
     border-radius: 25px;
     margin-bottom: 3vh;
 }
-
-#page-content-wrapper-contact {
+#page-content-wrapper-white {
     width: 100%;
-    position: relative;
-    padding: 0px;
-    background-color: #ffffff;
-    height:100%;
-    border-radius: 0px;
-    margin-bottom: 3vh;
-    margin-top: 20%;
-}
-#page-content-wrapper-past {
-    width: 100%;
-    position: relative;
+    position: absolute;
     padding: 15px;
-    background-color: #ffffff;
-    height:100%;
-    border-radius: 25px;
-    margin-bottom: 3vh;
-    margin-top: 10%;
-}
-#faq{
-    width: 100%;
-    position: relative;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 25px;
-    margin-bottom: 3vh;
-    margin-top: 10%;
-}
-#page-content-wrapper-reg {
-    width: 100%;
-    position: relative;
-    padding: 10%;
-    background-color: #0093fc;
-    color: #ffffff;
+    background-color: #FFF;
     height:100%;
     border-radius: 25px;
     margin-bottom: 3vh;
@@ -109,19 +76,14 @@ html, body, #wrapper {
 	background-color: #0093fc;
     height:100%;
     border-radius: 25px;
-    color: #fff;
 }
 .solution {
 	position: relative;
     padding-top: 13%;
-    color: #000;
-    font-weight: bold;
 	padding-left:8%;
 	padding-right:8%;
 	padding-bottom:13%;
-	height:100%;
-    -webkit-mask-image: -webkit-gradient(linear, left bottom, left 40%,from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
-    
+	height:100%
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -212,10 +174,6 @@ html, body, #wrapper {
         margin-top: 15%;
         height: auto;
     }
-    .form_reg{
-        margin-top: 5%;
-        height: auto;
-    }
     .contact{
         margin-left: 25%;
         margin-right: 25%;
@@ -226,7 +184,6 @@ html, body, #wrapper {
         padding-bottom:3em;
         padding-top: 8em;
         padding-left: 35px;
-        color: #FFF;
     }
 
 @media(min-width:768px) {
@@ -271,11 +228,7 @@ html, body, #wrapper {
     }
 }
 
-@media(max-width:1000px){
-    #faq{
-        margin-top: 150%;
-    }
-}
+
 @media(max-width:767px){
     
     .circle {
@@ -289,7 +242,6 @@ html, body, #wrapper {
         margin-top: 50%;
         padding: 20px;
     }
-    
 }
 
 @media(max-width:767px){
