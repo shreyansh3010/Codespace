@@ -4,7 +4,7 @@ function initialize() {
     var map;
     var latitude = 0; //initialize with latitude
     var longitude = 0; //initialize with longitude
-    var locationPoint = new google.maps.LatLng(12.969264, 79.155938);
+    var locationPoint = new google.maps.LatLng(12.971000, 79.163666);
     var style = [{
         "featureType": "road",
         "elementType": "labels.icon",

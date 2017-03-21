@@ -2,238 +2,542 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="keywords"
+          content="Codespace codeplay CSI Computer Society of India VIT Vellore Institue of Technology CSI-VITU CSIVITU hackathon devfest gravitas">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description"
+          content="A national level hackathon aimed at bringing together India's most forward thinkers, innovators and implementors for the progress of technology and literacy.">
+    <meta name="distribution" content="web">
+    <meta name="distribution" content="global">
+    <meta name="copyright" content="Copyright 2017">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Codespace</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel='stylesheet prefetch' href='https://dl.dropboxusercontent.com/s/f8koknynsnp9d2k/owl.theme.default.min.css?dl=1'>
-    <link rel='stylesheet prefetch' href='https://dl.dropboxusercontent.com/s/npj0ketud6mhy0l/owl.carousel.min.css?dl=0'>
 
-      <link rel="stylesheet" href="css/style.css">
-    
-    <link rel="stylesheet" href="animate.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_IObY48zCuzX_-syqyszGdqFZG6O0oX4&amp;sensor=false"></script>
     <script src="js/map.js"></script>
+    <script>
+		(function(){
+			function id(v){
+				return document.getElementById(v);
+			}
+			function loadbar() {
+				var ovrl = id("overlay"),
+					prog = id("progress"),
+					stat = id("progstat"),
+					img = document.images,
+					c = 0;
+				tot = img.length;
+				function imgLoaded(){
+					c += 1;
+					var perc = ((100/tot*c) << 0) +"%";
+					prog.style.width = perc;
+					if(c===(tot)) return doneLoading();
+				}
+				function doneLoading(){
+					document.querySelector("body").classList.remove("preload");
+					setTimeout(function(){
+						ovrl.style.transform = "translateX(100vw)";
+					}, 200);
+					setTimeout(function(){
+						ovrl.style.opacity = 0;
+						ovrl.style.display = "none";
+					}, 1500);
+				}
+				for(var i=0; i<tot; i++) {
+					var tImg     = new Image();
+					tImg.onload  = imgLoaded;
+					tImg.onerror = imgLoaded;
+					tImg.src     = img[i].src;
+				}
+			}
+			document.addEventListener('DOMContentLoaded', loadbar, false);
+		}());
+    </script>
 </head>
 
 <body>
 
-    <div id="wrapper">
+<div id="overlay">
+    <div id="progstat">
+        <img src="./media/loader.gif" alt="">
+    </div>
+    <div id="progress"></div>
+</div>
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav" style="height: 85%;">
-                <li class="sidebar-brand">
-                    <a href="index.html">
-                        home
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="#">
-                        tracks
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="#">
-                        past years
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="faq.html">
-                        faq
-                    </a>
-                </li>
-                <li>
-                <div class="row bottom-align-text-nav" style="width: 100%; margin-bottom: 40%">
-                        <div class="col-md-4 col-sm-4 icon">
-                            <a href="https://www.facebook.com/csivit/?fref=ts" target="_blank"><img class="social" src="social_icon/facebook.png"/></a>
-                        </div>
-                        <div class="col-md-4 col-sm-4 icon" >
-                            <a href="https://twitter.com/csivitu" target="_blank"><img class="social" src="social_icon/twitter.png"/></a>
-                        </div>
-                        <div class="col-md-4 col-sm-4 icon" > 
-                            <a href="https://github.com/csivit" target="_blank"><img class="social" src="social_icon/github.png"/></a>
-                        </div>
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav" style="height: 85%;">
+        <li class="sidebar-brand">
+            <a href="#firstPage">
+                home
+            </a>
+        </li>
+        <li class="sidebar-brand">
+            <a href="#secondPage">
+                past years
+            </a>
+        </li>
+        <li class="sidebar-brand">
+            <a href="#3rdPage">
+                register
+            </a>
+        </li>
+        <li class="sidebar-brand">
+            <a href="#4thPage">
+                faqs
+            </a>
+        </li>
+        <li class="sidebar-brand">
+            <a href="#5thPage">
+                Our tie-ups
+            </a>
+        </li>
+        <li>
+            <div class="row bottom-align-text-nav" style="width: 100%; margin-bottom: 40%">
+                <div class="col-md-4 col-sm-4 icon">
+                    <a href="https://www.facebook.com/csivit/?fref=ts" target="_blank"><img class="social"
+                                                                                            src="social_icon/facebook.png"/></a>
                 </div>
-                </li>
-                <li class="sidebar-brand bottom-align-text-nav">
-                    <a href="#">
-                        contact us
-                    </a>
-                    
-                </li>
-                
-            </ul>
-            
-        </div>
-        <!-- /#sidebar-wrapper -->
+                <div class="col-md-4 col-sm-4 icon">
+                    <a href="https://twitter.com/csivitu" target="_blank"><img class="social"
+                                                                               src="social_icon/twitter.png"/></a>
+                </div>
+            </div>
+        </li>
+        <li class="sidebar-brand bottom-align-text-nav">
+            <a href="#lastPage">
+                contact us
+            </a>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div id="wrapper">
+
+    <div id="fullpage">
+        <!-- Home page -->
+        <div class="section" id="page-content-wrapper">
+            <video id="my-video" src="./media/cs0.mp4"></video>
+            <div class="container-fluid main-content">
                 <div class="row">
                     <div class="col-md-4 col-xs-12 col-sm-12">
-                        <img src="social_icon/logo.png"/>
+                        <img src="social_icon/logo.gif"/>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-xs-12 bottom-align-circle">
-                        <a href="#"><div class="circle">
-                            <img class="arrow" src="social_icon/arrow.png"/>
-                        </div></a>
+                        <a href="#4thPage">
+                            <div class="circle">
+                                <img class="arrow" src="social_icon/arrow.png"/>
+                            </div>
+                        </a>
                     </div>
                     <div id="description" class="bottom-align-text col-sm-6 col-md-6 col-xs-12 text-right">
-                        <font color="#ffffff"><p>With a recent move, our Hon. Prime Minister, Shri Narendra Modi, aimed to move our economy towards a cashless one. But this requires innovation and digital literacy in order of the masses to benifit fro it. That is the purpose of our Hackathon. To grant students with bright ideas a platfrom for their ideas to be heard, that would otherwise not.</p></font>
-                    </div>    
+                        <h1>15-16th April</h1>
+                        <h4>VIT University, Vellore. </h4>
+                        <p class="main-content-para">
+                            A national level hackathon aimed at bringing together India's most forward thinkers, innovators and implementors for the progress of technology and literacy.
+                            <br>
+                            24 hours dedicated to drive our nation further into digital revolution.
+                            <span class="hidden-xs">
+                            Our Hon. Prime Minister Narendra Modi has introduced considerable reforms to make
+                            our nation into - <em>Digital India</em>.Besides, we aim to address Smart Cities - using current
+                            technologies to generate dynamic updates to improve the daily life of the average citizen.
+                            </span>
+                            <br>
+                            Join us, the Computer Society of India - VIT University Student Branch as we provide you with your space to innovate.
+                            Here we make technology meet creativity to build for a change.
+                            </p>
+                    </div>
                 </div>
-                
+
             </div>
         </div>
-        
 
-        <div id="page-content-wrapper" class="faq" style="background-color: #ffffff; margin-top: 20%">
-            <div class="container-fluid">
+        <!--/ Home page -->
+
+
+        <!--Past Year -->
+        <div class="section" id="page-content-wrapper-past">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-2 col-xs-12 img_hover" style="margin-top: 6vh; margin-bottom: 3vh; padding: 10px;">
+                    <div class="col-xs-10 col-xs-offset-1" style="padding: 0px 0">
+                       <h3>We have been working hard to create the best experience for our participants.</h3>
+                        <h4>If you wish to join us and contribute, <a href="mailto:info@csivit.com?Subject=Regarding%20Contribution">Get in touch!</a></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 col-s-12 img_hover" style="margin-top: 0vh; margin-bottom: 3vh;" id="not">
                         <div class="past text_head"><b>2015</b></div>
-                        <div class="image">
-                            <div class="text">
-                                <p>A community Devfest aimed to bring the innovators together in order to contribute to our society.<br><br><span>codespace.csivit.com/2015</span></p>
-                            </div> 
+                        <div class="image" style="background-image: url(social_icon/past_year/2015.png)">
+                            <div class="text1">
+                                <p>A product-development Hackathon aimed to bring marketeers, designers, developers, ideators together to deliver ready-to-publish solutions.<br><br>
+                                    <span>
+                                       <a href="https://codeplay.csivit.com">codespace.csivit.com/2015</a>
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-12 img_hover" style="margin-left: 1vw; margin-right: 1vw; margin-top: 6vh; margin-bottom: 3vh; padding: 10px;" >
+                    <div class="col-md-6 col-xs-12 col-sm-12 img_hover" style="margin-top: 0vh; margin-bottom: 3vh;">
                         <div class="past text_head"><b>2016</b></div>
-                        <div class="image">
-                            <div class="text">
-                                <p>A community Devfest aimed to bring the innovators together in order to contribute to our society.<br><br><span>codespace.csivit.com/2016</span></p>
-                            </div> 
+                        <div class="image" style="background-image: url(social_icon/past_year/2016.png)">
+                            <div class="text1">
+                            <p>A community-devfest aimed to target the genuine problems faced by the urban-poor population. A human approach to aid our social-communities.
+                                <br><br>
+                                <span>
+                                       <a href="https://codeplay.csivit.com">codespace.csivit.com/2016</a>
+                                 </span>
+                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <div style="padding:0px; background-color:#ffffff; margin-top: 20%">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 background_blue">
-                        <div><font color="#ffffff">
-						<h4>Ques1. Where should I register?</h4>
-						<h4>Ques2. Where should I register?</h4>
-						<h4>Ques3. Where should I register?</h4>
-						<h4>Ques4. Where should I register?</h4>
-						<h4>Ques5. Where should I register?</h4>
-						<h4>Ques6. Where should I register?</h4>
-						<h4>Ques7. Where should I register?</h4>
-						<h4>Ques8. Where should I register?</h4>
-						<h4>Ques9. Where should I register?</h4>
-						<h4>Ques10. Where should I register?</h4>
-						</font></div>
-                    </div>    
-                    <div class="col-md-6 col-sm-12 col-xs-12 solution">
-					<h4>Resgister your project idea on this website. We'll review it and send you mail with your Developer's Pass. Please brind a copy of this ticket with you when you come for the hack.</h4>
-					<br>
-					<h4>Resgister your project idea on this website. We'll review it and send you mail with your Developer's Pass. Please brind a copy of this ticket with you when you come for the hack.</h4>
-					<br>
-					<h4>Resgister your project idea on this website. We'll review it and send you mail with your Developer's Pass. Please brind a copy of this ticket with you when you come for the hack.</h4>
-					</div>
+        <!--/Past Year-->
+        <!-- Registration -->
+        <div class="section" id="page-content-wrapper-reg">
+            <div class="container" id="payment">
+                <div class="pay_head">Register yourself for the best Hackathon of the year!</div>
+                <br>
+                <p style="text-align: center">We are charging a nominal fee of Rs100. We will provide you with unlimited WiFi, meals, goodies, mentors and your space to innovate.</p>
+                <div class="row form_reg">
+                    <div class="col-sm-12 col-xs-12 col-sm-12">
+                        <form id="form_pay" class="form-horizontal">
+                            <div class="form-group" style="margin-bottom: 2.5%">
+                                <div id="name_div" class="col-md-12 col-xs-12 col-sm-12">
+                                    <input type="text" id="name_pay" class="form-control" placeholder="NAME" required="true">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 2.5%">
+                                <div id="email_div" class="col-md-12 col-xs-12 col-sm-12">
+                                    <input type="email" id="email_pay" class="form-control" placeholder="E-MAIL" required="true">
+                                </div>
+                                
+                            </div>
+                            <div class="row" style="margin-bottom: 2%">
+                                <center>
+                                    <div class="col-lg-6 col-xs-12 col-md-6" style="color: #ffffff; text-align: left">
+                                        <h4>Are you a VIT student ? </h4>
+                                    </div>
+                                    <div class="col-lg-6 col-xs-12 col-md-6">
+                                        <div class="input-group" style="width: 30px;">
+                                            <span class="input-group-addon"
+                                                  style="background-color: #0093fc; border: 2px solid #7ccaf6; border-radius: 4px;padding-top: 10px;">
+                                                <input id="Checkbox_pay" type="checkbox" aria-label="...">
+                                            </span>
+                                        </div><!-- /input-group -->
+                                    </div>
+                                </center><!-- /.col-lg-6 -->
+                            </div>
+                            <div class="form-group" style="margin-bottom: 2.5%">
+                                <div id="reg_no_div" class="col-md-12 col-xs-12 col-sm-12">
+                                    <input type="text" id="reg_no_pay" pattern="^[1-9]{1}[0-9]{1}[A-Za-z]{3}[0-9]{4}$"
+                                           class="form-control" style="background-color: #0093fc"
+                                           placeholder="REGISTRATION No." 
+                                           required="true" disabled>
+                                </div>
+                                
+                            </div>
+                            <div class="form-group" style="margin-bottom: 2.5%">
+                                <div id="uni_name_div" class="col-md-12 col-xs-12 col-sm-12">
+                                    <input type="text" id="uni_name_pay" class="form-control"
+                                           style="background-color: #0093fc"
+                                           placeholder="UNIVERSITY / INSTITUTION NAME"
+                                           required="true">
+                                </div>
+                                
+                            </div>
+                            <p style="text-align: center">* Please fill all the details on the following pages *</p>
+                            <div class="form-group" style="margin-top: 2vh;">
+                                <div class="col-md-4 col-xs-12 col-sm-12"
+                                     onclick="pay('name_pay', 'email_pay', 'Checkbox_pay', 'reg_no_pay', 'uni_name_pay');">
+                                        <button id="pay" type="submit" class="btn btn-send">
+                                            <center>Register Now!</center>
+                                        </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
-        
+        <!--/ Registration -->
+
+        <!--FAQ section-->
+        <div id="faq" class="section">
+            <section id="faq-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2>
+                                FREQUENTLY ASKED QUESTIONS -
+                            </h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row faq_row">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>How is Codespace different from a other development fests?</h3>
+                            <p>
+                                Codespace is you ideal innovation incubator. A Hackathon that embraces designers,
+                                developers, entrepreneurs,
+                                thinkers, doers and anyone who has the potential to create something brilliant.
+                            </p>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>How much do I need to pay to register? Do I pay in cash or credit?</h3>
+                            <p>
+                                We have kept a nominal fee of INR100. During 24hr
+                                Hackathon we will provide you with WiFi, food, goodies and a lot more.
+                            </p>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>What is the maximum number of people allowed in a team? </h3>
+                            <p>
+                                A maximum of 5 people per team. Don't have team-mates? We got you covered! We provide
+                                you with
+                                chat rooms on slack. Details to join are mentioned in the above section. Just hit
+                                Register!
+                            </p>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>How do I know I have been short-listed for the hack?</h3>
+                            <p>
+                                Register your project idea on this website. We'll review it and send you a mail with
+                                your Hack
+                                Ticket. Please bring a copy of this ticket with you when you come for the hack.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>What if my partner was waitlisted but I wasn’t?</h3>
+                            <p>
+                                The selected teams are those who have passed the filtered process. However, there is a
+                                slight chance
+                                of prioritizing individual talent. So give the registration form your best. For such
+                                cases, do contact us.
+                            </p>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>What if I can’t attend after all?</h3>
+                            <p>
+                                If your spot has been confirmed by us but you can no longer attend, please contact us
+                                right away so that we
+                                can give your spot to someone who’s waitlisted. We would appreciate your efforts!
+                            </p>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>How do I check in upon arrival? </h3>
+                            <p>
+                                The selected members are sent their respective DevTickets, which has a unique code for
+                                each individual Please
+                                bring this ticket to the fest and you are good! You can also bring your favourite pillow
+                                but don't forget the ticket.
+                            </p>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 faq_col">
+                            <h3>What if I have another question?</h3>
+                            <p>
+                                Tweet us - <u>@csivitu</u> <br>
+                                Submit it via "Get in touch" section on this page. <br>
+                                Reach us via Facebook - <u>fb/csicodespace</u> <br>
+                                Mail us - <u>info@csivit.com</u>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--</div>
+    </div>-->
+        <!--/ FAQ section-->
 
 
-        <div id="page-content-wrapper" style="border-radius: 0px; padding: 0px; background-color: #ffffff; margin-top: 20%">
+        <!-- Tie Ups -->
+        <div id="page-content-wrapper-tieup" class="section">
+            <section id="TieUp-section">
+                <div class="container">
+                    <div class="row">
+                        <center>
+                            <div class="col-xs-12 col-md-12 col-lg-12">
+                                <h1><b>Our tie - ups</b></h1>
+                            </div>
+                        </center>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 faq_col">
+                            <div class="image logo" style="box-shadow:none;">
+                                <img src="social_icon/tie_ups/1.png"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 faq_col">
+                            <div class="image logo" style="box-shadow:none;">
+                                <img src="social_icon/tie_ups/2.png"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 faq_col">
+                            <div class="image logo" style="box-shadow:none;">
+                                <img src="social_icon/tie_ups/3.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 faq_col">
+                            <div class="image logo" style="box-shadow:none;">
+                                <img src="social_icon/tie_ups/4.png"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 faq_col">
+                            <div class="image logo" style="box-shadow:none;">
+                                <img src="social_icon/tie_ups/5.png"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 faq_col">
+                            <div class="image logo" style="box-shadow:none;">
+                                <img src="social_icon/tie_ups/6.png"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /Tie Ups -->
+
+        <!--contat us-->
+        <div class="section" id="page-content-wrapper-contact">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="map" class="col-sm-6 col-md-6 col-xs-12 message">    
+                    <div id="map" class="col-sm-6 col-md-6 hidden-xs message">
                     </div>
-                    <font color="#ffffff">
                     <div class="col-sm-6 col-md-6 col-xs-12 contact">
                         <p style="opacity: 0.6; font-size: 25px">There are plenty of ways to reach Vellore</p>
                         <h4><b>Start planning your trip now!</b></h4>
                         <div class="row form">
                             <div class="col-sm-12 col-xs-12 col-sm-12">
                                 <h4 style="opacity: 0.6">Have a doubt? Ask right away</h4>
-                                <form name="address" id="form" action="#" method="post" class="form-horizontal">
-									<div class="form-group">
-										<div id="name_div" class="col-md-12 col-xs-12 col-sm-12">
-											<input type="text"  name="name" id="name" class="form-control" placeholder="NAME" required="required">
-										</div>
-									</div>
-									<div class="form-group">
-										<div id="email_div" class="col-md-12 col-xs-12 col-sm-12">
-											<input type="email" id="email" name="email" class="form-control" placeholder="E-MAIL" required="required">
-										</div>
-									</div>
-									<div class="form-group">
-										<div id="message_div" class="col-md-12 col-xs-12 col-sm-12">
-										<textarea name ="message" rows="8" cols="60" class="form-control" placeholder="YOUR MESSAGE" required="required" style="resize: none;"></textarea>
-										</div>
-									</div>                       
-									<div class="form-group">
-                                        <div class="col-md-4 col-xs-12 col-sm-12"><center>
-                                            <button type="submit" class="btn btn-send"><center>Contact Us</center></button>
+                                <form id="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <div id="name_div" class="col-md-12 col-xs-12 col-sm-12">
+                                            <input type="text" id="name" class="form-control" placeholder="NAME">
+                                        </div>
+                                        <span id="error_name_contact" class="error"
+                                              style="color: #ffffff; margin-top: 2px">* This field is required</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="email_div" class="col-md-12 col-xs-12 col-sm-12">
+                                            <input type="email" id="email" class="form-control" placeholder="E-MAIL">
+                                        </div>
+                                        <span id="error_email_contact" class="error"
+                                              style="color: #ffffff; margin-top: 2px">* This field is required with valid email</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="message_div" class="col-md-12 col-xs-12 col-sm-12">
+                                            <textarea id="message" rows="8" cols="60" class="form-control"
+                                                      placeholder="YOUR MESSAGE" style="resize: none;"></textarea>
+                                        </div>
+                                        <span id="error_text_contact" class="error"
+                                              style="color: #ffffff; margin-top: 2px">* This field is required</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-xs-12 col-sm-12"
+                                             onclick="contact('name','email','message');">
+                                            <center>
+                                                <button type="submit" class="btn btn-send">
+                                                    <center>Contact Us</center>
+                                                </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    </font>
                 </div>
             </div>
         </div>
 
-        <!-- /#page-content-wrapper -->
-        
-        
-        
-        </div>  
+        <!-- /contact us-->
 
+    </div>
 
-        
-       
-    <!-- /#wrapper -->
+</div>
+<!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-    
-    <script src='https://dl.dropboxusercontent.com/s/bnuvg4ad3vl7nop/owl.carousel.min.js?dl=1'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/index.js"></script>
+<!-- Menu Toggle Script -->
+<script>
+	$("#menu-toggle").click(function (e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+</script>
 
+<script src='https://dl.dropboxusercontent.com/s/bnuvg4ad3vl7nop/owl.carousel.min.js?dl=1'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript" src="js/javascript.fullPage.js"></script>
+<script type="text/javascript">
+	if (window.innerWidth > 760) {
+		$('head').append('<link rel="stylesheet" type="text/css" href="css/javascript.fullPage.css" />');
+	}
+	if (window.innerWidth > 760) {
+		fullpage.initialize('#fullpage', {
+			anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', 'lastPage'],
+			menu: '#menu',
+			css3: true
+		})
+	}
+	;
+</script>
+
+<script>
+	(function () {
+		var video = document.getElementById("my-video");
+		video.addEventListener("canplay", function () {
+			video.play();
+			if (typeof video.loop == "boolean") {
+				video.loop = true;
+			} else {
+				video.addEventListener('ended', function () {
+					this.currentTime = 0;
+					this.play();
+				}, false);
+			}
+		});
+	})();
+</script>
 
 </body>
 
