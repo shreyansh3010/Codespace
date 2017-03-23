@@ -9,6 +9,19 @@
  });
  */
 
+$('#img1').hover(function () {
+    $('#head1').css('color', '#0093fc');
+},
+function () {
+    $('#head1').css('color', '#CED1D2');
+});
+$('#img2').hover(function () {
+    $('#head2').css('color', '#0093fc');
+},
+function () {
+    $('#head2').css('color', '#CED1D2');
+});
+
 //Validation
 
 $('#Checkbox_pay').click(function () {
