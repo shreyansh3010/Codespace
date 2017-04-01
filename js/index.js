@@ -1,4 +1,4 @@
-/*
+
  $(document).ready(function(){
  $(".owl-carousel").owlCarousel({
  nav:true,
@@ -7,7 +7,7 @@
  nav: false
  });
  });
- */
+ 
 
 $('#img1').hover(function () {
     $('#head1').css('color', '#0093fc');
@@ -39,7 +39,6 @@ function pay(name_pay, email_pay, Checkbox_pay, reg_no_pay, uni_name_pay) {
 	var el_email = document.getElementById("error_email_pay");
 	var el_reg = document.getElementById("error_reg_pay");
 	var el_uni = document.getElementById("error_uni_pay");
-	var c1=0,c2=0,c3=0;
 	function name_check() {
 		if (name.length === 0) {
 			el_name.classList.remove("error");
