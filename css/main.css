@@ -434,6 +434,7 @@ html, body, #wrapper {
     margin: 40px auto;
     height: 80vh;
     width: 70vw;
+    background-color: #ffffff;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -507,16 +508,19 @@ html, body, #wrapper {
     .slide1 {
         width: 49vw !important;
     }
+    .slide1 img.slideImage {
+        display: none;
+    }
     .text {
-        left: 7vw !important;
-        top: 10vh !important;
+        left: 8vw !important;
+        top: 27vh !important;
         font-size: xx-small;
     }
     .text h3{
-        font-size: xx-large;
+        font-size: 2em;
     }
     .owl-theme .owl-dots {
-        right: -50vw !important;
+        right: -44vw !important;
     }
     .slide1 div.page_no {
         display: none;
@@ -552,6 +556,9 @@ html, body, #wrapper {
     height: auto;
     max-width: 40vh;
     position: relative;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     top: 20vh;
     left: -2vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
